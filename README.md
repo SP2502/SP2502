@@ -1,12 +1,18 @@
 # Hi, I'm Shreyansh 👋
 
-I'm a student who likes building things.
+I'm a Class 11 student who likes building things and figuring out how they work.
 
-Most of my projects start because I have a question, an idea, or a problem I want to understand. I usually learn by building the first version, finding out what breaks, and then figuring out how to make it better.
+Most of my projects start with a question, an idea, or a problem I don't fully understand.
 
-Right now I'm working on **Cortex**, an open deep-research system, while also building **Universal**, a weather-data layer, and **AEGIS**, a Windows content blocker.
+I usually learn by building the first version, seeing what breaks, understanding why it broke, and then trying to make the next version better.
 
-I also have a Minecraft bot that is already built, deployed, and running.
+I'm currently building **Universal**, an infrastructure layer for weather data, while also working on **Cortex**, an open deep-research system, and **AEGIS**, a Windows content blocker.
+
+I also built **ARGUS**, a Minecraft bot and AI system that is already hosted and running.
+
+### 🌐 Website
+
+**[sp2502.github.io/Me](https://sp2502.github.io/Me/)**
 
 ---
 
@@ -14,22 +20,81 @@ I also have a Minecraft bot that is already built, deployed, and running.
 
 | Project | What it is | Status |
 |---|---|---|
-| **Cortex** | Open deep-research system | 🚧 Building |
 | **Universal** | Weather-data infrastructure | 🧪 Early development |
+| **Cortex** | Open deep-research system | 🚧 Building |
 | **AEGIS** | Free Windows content blocker | 🚧 Building |
-| **Minecraft Bot** | Hosted Minecraft automation | ✅ Running |
+| **ARGUS** | Autonomous Minecraft bot & AI system | ✅ Hosted & running |
+
+These aren't just projects I want to finish.
+
+They're also how I learn.
 
 ---
 
-## 🧠 Cortex
+# 🌍 Universal
+
+### Weather data without provider-specific complexity
+
+**Universal** is a weather-data infrastructure project.
+
+The idea is simple:
+
+> An application should not have to care which weather provider is working underneath it.
+
+A developer provides coordinates, and Universal handles the rest.
+
+```text
+Latitude + Longitude
+        ↓
+Location Resolution
+        ↓
+Provider Selection
+        ↓
+Best Available Provider
+        ↓
+Fallback if needed
+        ↓
+Data Normalization
+        ↓
+Universal API
+        ↓
+Application
+```
+
+Universal is designed around multiple weather providers instead of depending completely on one source.
+
+The system is being built to handle things like:
+
+- Coordinate-based location resolution
+- Multiple weather providers
+- Provider selection
+- Provider fallbacks
+- Data normalization
+- Consistent API responses
+- Provider abstraction
+- Reliability when individual providers fail
+
+The main thing I'm exploring is the infrastructure layer between an application and the services providing its weather data.
+
+Instead of making every application understand every provider, Universal tries to provide one consistent interface.
+
+I'm still refining the architecture and figuring out which parts actually need to be abstracted.
+
+**Status:** 🧪 Early development
+
+---
+
+# 🧠 Cortex
 
 ### Open Deep Research
 
-**Cortex** is my current AI project.
+**Cortex** is an open-source deep-research system I'm building around a simple question:
 
-I'm building it around a simple idea: asking a difficult question should not end with an AI giving one quick answer. A useful research system should be able to figure out what it needs to know, find the information, compare it, and build an answer from the evidence.
+> What would a research system look like if it had to actually work through a difficult question instead of producing one quick answer?
 
-Cortex is being designed to work through research in stages:
+The goal is for Cortex to take a complex question, determine what needs to be researched, gather information, compare evidence, and produce structured research.
+
+The general workflow looks like:
 
 ```text
 Question
@@ -38,92 +103,68 @@ Understand the problem
    ↓
 Break it into research tasks
    ↓
-Plan the research
+Create a research plan
    ↓
 Search & gather information
+   ↓
+Collect evidence
    ↓
 Compare sources
    ↓
 Reason over the evidence
    ↓
-Produce the final research
+Synthesize findings
+   ↓
+Final research
 ```
 
-Things I'm working on include:
+Some of the areas I'm working on include:
 
 - Research planning
-- Breaking complex questions into smaller tasks
-- Multi-step research workflows
-- Searching across different sources
+- Task decomposition
+- Multi-step research
+- Search and information gathering
 - Evidence collection
 - Source comparison
-- Reasoning over gathered information
+- Evidence-based reasoning
 - Structured research output
-- Different AI models and tools
-- Handling long-running research tasks
+- Tool use
+- Multiple AI models
+- Long-running research
+- Failure recovery
+- Evaluation
 
-I'm also interested in the less visible parts of a research system — reliability, tool failures, bad sources, conflicting information, prompt injection, and what happens when one step of the process doesn't go as expected.
+I'm particularly interested in what happens when things go wrong.
 
-Cortex is still being built, so the architecture is changing as I learn what actually works.
+Real research systems have to deal with:
+
+- Bad sources
+- Conflicting information
+- Search failures
+- Tool failures
+- Incomplete results
+- Incorrect assumptions
+- Prompt injection
+- Models making mistakes
+- Research tasks taking much longer than expected
+
+Cortex is still changing as I experiment with different architectures.
+
+I'm not trying to make the architecture look finished before I understand it.
 
 **Status:** 🚧 Active development
 
 ---
 
-## 🌍 Universal
-
-### Weather Data Without Being Locked to One Provider
-
-**Universal** is a weather-data infrastructure project.
-
-The idea came from a simple problem: applications shouldn't have to care about which weather provider is working underneath them.
-
-A developer can provide coordinates, and Universal handles the rest.
-
-```text
-Latitude + Longitude
-        ↓
-Location Resolution
-        ↓
-Weather Provider Selection
-        ↓
-Best Available Provider
-        ↓
-Normalized Weather Data
-        ↓
-Application
-```
-
-Universal is designed around multiple weather providers instead of depending on a single source.
-
-The system can:
-
-- Resolve a location from coordinates
-- Work with multiple weather providers
-- Select an appropriate provider
-- Fall back to another provider when needed
-- Normalize data between providers
-- Give applications a consistent way to access weather information
-
-The fallback part is important.
-
-If one provider has a problem, the application shouldn't necessarily have to stop working with it.
-
-I'm building Universal to be the layer between an application and the providers underneath it.
-
-**Status:** 🧪 Early development
-
----
-
-## 🛡️ AEGIS
+# 🛡️ AEGIS
 
 ### Free Windows Content Blocker
 
 **AEGIS** is a free Windows application I'm building to block unwanted and adult content.
 
-The goal is to make it a practical desktop application that can actually be used on a normal Windows machine, rather than just making a proof-of-concept filter.
+The goal is to make it a practical desktop application rather than just a proof-of-concept filter.
 
-I'm currently working on things such as:
+I'm exploring areas such as:
 
 - Content blocking
 - Windows integration
@@ -132,88 +173,110 @@ I'm currently working on things such as:
 - Reliability
 - Performance
 - System-level behavior
-- Handling edge cases
+- Edge cases
 - Usability
 
-There is still a lot to build, and I'm treating reliability as an important part of the project.
+The Windows version is the current focus.
+
+Android support is planned for a later stage.
+
+A large part of the project is figuring out how to make the system reliable enough to run on a normal computer without constantly getting in the user's way.
 
 **Status:** 🚧 Building
 
 ---
 
-## 🎮 Minecraft Bot
+# 🎮 ARGUS
 
-### Completed & Hosted
+### Autonomous Minecraft Bot & AI System
 
-This is one of my earlier projects, and one of the first projects where I took something from an experiment to a running system.
+**ARGUS** started as an experiment to see how far I could take Minecraft automation.
 
-The bot is **currently hosted and running**.
+It eventually became a hosted, continuously running system.
 
-Working on it taught me about things that are easy to miss when writing small programs:
+```text
+Observe
+   ↓
+Understand state
+   ↓
+Decide
+   ↓
+Act
+   ↓
+Observe again
+```
+
+Working on ARGUS taught me about things that don't always appear when writing small programs:
 
 - Minecraft APIs
 - Automation
 - Event-driven systems
 - State management
 - Server interaction
+- Long-running processes
 - Deployment
 - Debugging
-- Keeping a program running continuously
+- Reliability
 
-It started as:
+The interesting part wasn't just making the bot perform an action.
 
-> "Can I make a bot do this?"
+It was keeping the entire system running and figuring out what happens when the environment behaves differently from what the program expected.
 
-and eventually became an actual hosted system.
+### 🌐 ARGUS Website
 
-**Status:** ✅ Completed & Hosted
+**[argus-website-nu.vercel.app](https://argus-website-nu.vercel.app/)**
 
----
-
-## 🌐 ARGUS
-
-### Autonomous Minecraft AI Agent
-
-I also built **ARGUS**, a website for my Minecraft AI agent project.
-
-**Website:** [argus-website-nu.vercel.app](https://argus-website-nu.vercel.app/)
-
-ARGUS represents another part of what I'm interested in: software that can interact with an environment instead of only responding to a user.
+**Status:** ✅ Hosted & running
 
 ---
 
-## 🔧 What I'm Interested In
+# 🔧 What I'm Interested In
 
-A lot of my projects end up sharing the same ideas.
+A lot of my projects eventually lead back to the same ideas.
 
-I like software that can:
+I'm interested in software that can:
 
 - Take information in
-- Understand what is happening
+- Understand its environment
 - Make decisions
 - Use tools
 - Interact with other systems
-- Recover when something fails
-- Keep working without someone constantly watching it
+- Handle unexpected situations
+- Recover from failures
+- Continue working without constant supervision
 
-That's probably why my projects have moved from Minecraft bots toward AI agents, research systems, and infrastructure.
+That's probably why my projects have gradually moved from Minecraft automation toward AI systems, infrastructure, and autonomous software.
 
-I'm interested in the point where **software stops being just a collection of functions and starts behaving like a system.**
+I'm especially interested in the point where:
+
+> **software stops being just a collection of functions and starts becoming a system.**
 
 ---
 
-## 🧰 Things I'm Learning
+# 🧰 What I'm Learning
 
-I learn most of this by actually building projects.
+I learn most of these things by actually using them in projects.
 
-Some of the areas I'm spending time on:
+### Languages
 
 - Python
+- Go
+- Java
+- HTML / CSS
+- JavaScript
+
+### Frameworks & Runtime
+
+- Node.js
+- React
+
+### Areas I'm exploring
+
 - AI / LLM systems
-- Agents and automation
+- AI agents
+- Automation
 - APIs
 - Backend development
-- Web development
 - Software architecture
 - System design
 - Security
@@ -224,69 +287,96 @@ Some of the areas I'm spending time on:
 
 I don't consider myself an expert in all of these.
 
-Some things I know well enough to build with. Other things I'm still figuring out.
+Some are tools I already use regularly.
 
-That's one of the reasons I keep building projects instead of waiting until I "know enough."
+Some are things I'm still learning.
+
+And some are things I only understand because a project forced me to figure them out.
+
+That's how I prefer learning.
 
 ---
 
-## ⚙️ How I Build
+# ⚙️ How I Build
 
-I don't have a perfect process.
+I don't have a perfect development process.
 
-Usually it looks more like:
+Usually it looks something like this:
 
 ```text
+Question
+   ↓
 Idea
- ↓
+   ↓
 Build something
- ↓
+   ↓
 It breaks
- ↓
+   ↓
 Figure out why
- ↓
+   ↓
 Fix it
- ↓
+   ↓
 Find another problem
- ↓
+   ↓
 Understand the system better
- ↓
+   ↓
 Rebuild parts of it
+   ↓
+Repeat
 ```
 
-I try to keep a few things consistent:
+A few things I try to keep consistent:
 
 - Keep the code understandable
-- Avoid unnecessary complexity
+- Avoid complexity without a reason
 - Separate things that should be separate
 - Test important behavior
 - Think about failure cases
 - Care about privacy and security
-- Document things that future-me will forget
+- Document things future-me will forget
+- Replace bad approaches instead of protecting them
 
-And if an approach is wrong, I'm okay with throwing it away and trying again.
+Sometimes the correct solution is to throw away what I built and start again.
+
+That's part of building.
 
 ---
 
-## 📚 Learning Through Projects
+# 📚 Learning Through Projects
 
-Each project has taught me something different.
+Each project has pushed me into a different area.
 
-**Minecraft Bot** taught me about automation and keeping software running.
+### ARGUS
 
-**AEGIS** is teaching me about Windows, system-level software, reliability, and security.
+Taught me about:
 
-**Universal** is making me think about APIs, providers, fallbacks, and infrastructure.
+**automation → APIs → events → state → deployment → long-running systems**
 
-**Cortex** is pushing me into AI systems, research planning, tool use, evaluation, and long-running workflows.
+### AEGIS
+
+Is teaching me about:
+
+**Windows → system integration → reliability → security → privacy**
+
+### Universal
+
+Is pushing me toward:
+
+**APIs → infrastructure → provider abstraction → fallbacks → data normalization**
+
+### Cortex
+
+Is pushing me toward:
+
+**AI systems → research planning → tool use → evidence → evaluation → autonomous workflows**
 
 The projects are getting more complicated as I learn.
 
-That's probably the most accurate description of what this GitHub is.
+That's probably the simplest description of this GitHub.
 
 ---
 
-## 🌱 Open Source
+# 🌱 Open Source
 
 A lot of the code here is still evolving.
 
@@ -298,50 +388,126 @@ You may find:
 - Architectural changes
 - Failed approaches
 - Temporary solutions
-- Things that I later decide to replace
+- Code that I later replace
 
 I'm okay with that.
 
-I'd rather keep the development process visible than make everything look finished when it isn't.
+I'd rather show how a project is actually developing than make everything look finished when it isn't.
 
-When something becomes stable enough to be useful, I'll document and clean it up.
-
----
-
-## 🗺️ What's Next
-
-My current focus is mainly on:
-
-**Cortex → Universal → AEGIS**
-
-while keeping the Minecraft project running.
-
-There are plenty of other ideas I'd like to build, but I'm trying to get better at taking projects further instead of constantly starting new ones.
+When something becomes stable enough to be useful, I'll document it and clean it up.
 
 ---
 
-## 👋 A Little About This GitHub
+# 🎯 Current Focus
 
-I'm still a student, and this repository is basically my workshop.
+Right now, most of my attention is going toward:
+
+### 01 — Universal
+
+Refining the architecture and figuring out how a reliable weather-data layer should work.
+
+### 02 — Cortex
+
+Building the architecture behind an open deep-research system.
+
+### 03 — AEGIS
+
+Developing the Windows version and working on reliability, privacy, and system integration.
+
+### 04 — ARGUS
+
+Keeping the hosted Minecraft system running and continuing to experiment with it.
+
+I'm also learning more about current AI systems through courses, experiments, and projects.
+
+---
+
+# 🗺️ What's Next
+
+There are always more ideas I want to build.
+
+I'm trying to get better at something more important:
+
+**taking projects further instead of constantly starting new ones.**
+
+I'd rather have a few systems that I understand deeply than a huge list of unfinished ideas.
+
+---
+
+# 👨‍💻 A Little About Me
+
+I'm a Class 11 student interested in:
+
+- AI
+- Software systems
+- Algorithms
+- Backend development
+- Infrastructure
+- Automation
+- Engineering
+
+Outside programming, I enjoy **flying drones** and **playing badminton**.
+
+I'm particularly interested in drones and would like to work in the drone industry in the future.
+
+---
+
+# 🧪 This GitHub Is Basically My Workshop
 
 Some projects work.
 
 Some don't.
 
-Some start small and become much bigger than I expected.
+Some start small and become much bigger than expected.
 
 Some get completely rebuilt.
 
+Some ideas turn out to be bad.
+
 That's fine.
 
-The interesting part for me is seeing what happens between:
+The interesting part for me is what happens between:
 
-> "I have an idea."
+```text
+"I have an idea."
+        ↓
+"I built something."
+        ↓
+"It doesn't work."
+        ↓
+"Now I understand why."
+        ↓
+"Let's build it again."
+        ↓
+"It's actually running."
+```
 
-and
+That's what most of the code here represents.
 
-> "It's actually running."
+Not finished products.
+
+Not perfect projects.
+
+Just things I'm building to understand how systems work.
 
 ---
 
-**Still building. Still learning. Still breaking things.**
+## 🌐 Find Me
+
+**Website:**  
+[sp2502.github.io/Me](https://sp2502.github.io/Me/)
+
+**GitHub:**  
+[github.com/SP2502](https://github.com/SP2502)
+
+**ARGUS:**  
+[argus-website-nu.vercel.app](https://argus-website-nu.vercel.app/)
+
+**Email:**  
+[shreyansh2502@outlook.com](mailto:shreyansh2502@outlook.com)
+
+---
+
+> **Build. Break. Understand. Improve.**
+
+Still building. Still learning. Still figuring things out.
