@@ -504,7 +504,7 @@ Just things I'm building to understand how systems work.
 [argus-website-nu.vercel.app](https://argus-website-nu.vercel.app/)
 
 **Email:**  
-[shreyansh2502@outlook.com](mailto:shreyansh2502@outlook.com)
+[shreyansh.2502@outlook.com](mailto:shreyansh.2502@outlook.com)
 
 ---
 
